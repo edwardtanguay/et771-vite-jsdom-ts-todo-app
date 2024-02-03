@@ -1,4 +1,5 @@
 import { ITodo } from "../interfaces"
+import * as Todos from "./Todos";
 
 
 export const Todo = (todo: ITodo, todos: ITodo[]) => {
@@ -11,7 +12,8 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 		if (todoElem && todoLabelElem) {
 			todoLabelElem.addEventListener('click', () => {
 				todo.finished = !todo.finished;
-				todoElem.innerHTML = Todo(todo, todos);
+				// todoElem.innerHTML = Todo(todo, todos);
+				Todos.render(todos);
 			});
 		}
 	}, 0);

@@ -4,11 +4,12 @@
 		- checkbox (finished)
 		- edit
 		- delete
-	- .. display if finished
+	- x display if finished
 		- x mark if finished
 		- x cross out
 		- x if text click, with hover
-		- .. fix bug: click twice
+		- x fix bug: click twice
+	- create: rerenderTodos
 - create about page
 	- best practice JS-DOM sites
 	- note that our data source for todos is an array of objects, i.e. we don't misuse HTML as a data source
@@ -18,6 +19,8 @@
 	- multipage
 	- usability
 	- with React usw. in mind
+	- improvements
+		- make the rerendering a core feature which makes it easy to add other computers that are automatically rerendered, e.g. anytime you change appData (basically a collection of state variables), you rerender all the components
 - create: add todo
 
 - localstorage
