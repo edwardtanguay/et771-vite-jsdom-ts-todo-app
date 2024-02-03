@@ -1,5 +1,7 @@
+import { Todos } from "../components/Todos"
+
 export const PageMain = () => {
 	return /*html*/ `
-	<p>page main</p>
+${Todos()}
 	`
 }
