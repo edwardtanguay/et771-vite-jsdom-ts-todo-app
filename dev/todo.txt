@@ -1,0 +1,12 @@
+- x create javascript array of todos
+- .. display them
+	- .. style them with all buttons
+		- checkbox (finished)
+		- edit
+		- delete
+- create: add todo
+
+- localstorage
+
+- create about page
+	- best practice JS-DOM sites
