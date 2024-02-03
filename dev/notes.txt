@@ -12,10 +12,10 @@
 	- x create: rerenderTodos
 	- x checkbox also switches display
 	- x make add button
-	- .. make delete work
-	- do mock add and edit
-	- post
-- create about page
+	- x make delete work
+	- x do mock add and edit
+	- x post
+- .. create about page
 	- best practice JS-DOM sites
 	- note that our data source for todos is an array of objects, i.e. we don't misuse HTML as a data source
 	- [Version 4.7 Font Awesome icons](https://tanguay-eu.vercel.app/howtos/372) are the easiest to use for JS-DOM sites  

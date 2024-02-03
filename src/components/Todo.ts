@@ -20,7 +20,6 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 			});
 			btnDeleteElem.addEventListener('click', () => {
 				todos = todos.filter(m => m.suuid !== todo.suuid);
-				console.log(333, todos);
 				Todos.render(todos);
 			});
 			btnEditElem.addEventListener('click', () => {
