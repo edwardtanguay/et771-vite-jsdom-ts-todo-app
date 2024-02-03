@@ -9,9 +9,15 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 	setTimeout(() => {
 		const todoElem = document.querySelector<HTMLDivElement>(`#${htmlTodoId}`);
 		const todoCheckboxElem = document.querySelector<HTMLDivElement>(`#${htmlTodoId} input[type=checkbox]`);
-		if (todoElem && todoCheckboxElem) {
+		const btnDeleteElem = document.querySelector<HTMLButtonElement>(`#${htmlTodoId} .btnDelete`)
+		if (todoElem && todoCheckboxElem && btnDeleteElem) {
 			todoCheckboxElem.addEventListener('click', () => {
 				todo.finished = !todo.finished;
+				Todos.render(todos);
+			});
+			btnDeleteElem.addEventListener('click', () => {
+				todos = todos.filter(m => m.suuid !== todo.suuid);
+				console.log(333, todos);
 				Todos.render(todos);
 			});
 		}
@@ -25,9 +31,9 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 			<label class="select-none cursor-pointer hover:text-gray-50 ${todo.finished ? `line-through` : ''}" for="${htmlCheckboxId}">${todo.text}</label>
 		</section>
 		<section class="flex gap-2">
-			<button><i class="fa fa-plus-square text-yellow-500 hover:text-yellow-300" aria-hidden="true"></i></button>
-			<button><i class="fa fa-pencil text-green-500 hover:text-green-300" aria-hidden="true"></i></button>
-			<button><i class="fa fa-trash text-red-500 hover:text-red-300" aria-hidden="true"></i></button>
+			<button><i class="btnAdd fa fa-plus-square text-yellow-500 hover:text-yellow-300" aria-hidden="true"></i></button>
+			<button><i class="btnEdit fa fa-pencil text-green-500 hover:text-green-300" aria-hidden="true"></i></button>
+			<button><i class="btnDelete fa fa-trash text-red-500 hover:text-red-300" aria-hidden="true"></i></button>
 		</section>
 	</div>
 </div>

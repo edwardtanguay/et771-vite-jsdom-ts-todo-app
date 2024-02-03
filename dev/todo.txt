@@ -11,8 +11,8 @@
 		- x fix bug: click twice
 	- x create: rerenderTodos
 	- x checkbox also switches display
-	- .. make add button
-	- .. make delete works
+	- x make add button
+	- .. make delete work
 	- do mock add and edit
 	- post
 - create about page
