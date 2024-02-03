@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.debuggingArea {
+	background-color: #aaa;
+	padding: 1rem;
+	color: #333;
+	font-family: 'Courier New', Courier, monospace;
+	border: 3px solid #777;
+	margin-top: 1rem;
+}
