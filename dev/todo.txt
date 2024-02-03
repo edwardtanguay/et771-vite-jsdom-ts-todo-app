@@ -16,6 +16,7 @@
 	- suuid
 	- multipage
 	- usability
+	- with React usw. in mind
 - create: add todo
 
 - localstorage
