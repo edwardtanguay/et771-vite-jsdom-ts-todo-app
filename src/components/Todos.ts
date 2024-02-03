@@ -4,11 +4,11 @@ import { Todo } from './Todo.js';
 
 export const Todos = () => {
 	return /*html*/ `
-<div id="todos-component">
-	<div class="mt-4">
-	${todos.map(todo => {
-		return Todo(todo, todos);
-	}).join('')}
+<div class="mt-4">
+	<div id="todos-component">
+		${todos.map(todo => {
+			return Todo(todo, todos);
+		}).join('')}
 	</div>
 </div>
 `
