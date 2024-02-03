@@ -7,7 +7,8 @@
 	- .. display if finished
 		- x mark if finished
 		- x cross out
-		- .. if text click, with hover
+		- x if text click, with hover
+		- .. fix bug: click twice
 - create about page
 	- best practice JS-DOM sites
 	- note that our data source for todos is an array of objects, i.e. we don't misuse HTML as a data source

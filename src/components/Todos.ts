@@ -8,7 +8,7 @@ export const Todos = () => {
 
 <div class="mt-4">
 ${todos.map(todo => {
-	return Todo(todo);
+	return Todo(todo, todos);
 }).join('')}
 </div>
 `
