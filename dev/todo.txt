@@ -1,12 +1,21 @@
 - x create javascript array of todos
 - .. display them
-	- .. style them with all buttons
+	- x style them with all buttons
 		- checkbox (finished)
 		- edit
 		- delete
+	- .. display if finished
+		- x mark if finished
+		- x cross out
+		- .. if text click, with hover
+- create about page
+	- best practice JS-DOM sites
+	- note that our data source for todos is an array of objects, i.e. we don't misuse HTML as a data source
+	- [Version 4.7 Font Awesome icons](https://tanguay-eu.vercel.app/howtos/372) are the easiest to use for JS-DOM sites  
+	- components
+	- suuid
+	- multipage
+	- usability
 - create: add todo
 
 - localstorage
-
-- create about page
-	- best practice JS-DOM sites
