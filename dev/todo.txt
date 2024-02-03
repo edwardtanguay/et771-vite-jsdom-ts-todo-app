@@ -10,9 +10,9 @@
 		- x if text click, with hover
 		- x fix bug: click twice
 	- x create: rerenderTodos
-	- .. checkbox also switches display
-	- make delete works
-	- make add button
+	- x checkbox also switches display
+	- .. make add button
+	- .. make delete works
 	- do mock add and edit
 	- post
 - create about page
