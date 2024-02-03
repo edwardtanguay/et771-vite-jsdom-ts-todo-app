@@ -1,7 +1,8 @@
 import { todos } from "../data.js";
-import { ITodo } from "../interfaces.js";
+import { INewTodo, ITodo } from "../interfaces.js";
 import { Todo } from "./Todo.js";
 import * as config from "../config.js";
+import * as tools from '../tools.js';
 
 export const Todos = () => {
 	setTimeout(() => {
@@ -31,3 +32,10 @@ export const render = (todos: ITodo[]) => {
 		todosComponentElem.innerHTML = html;
 	}
 };
+
+export const createTodo = (newTodo: INewTodo) => {
+	return {
+		suuid: tools.getSuuid(),
+		...newTodo
+	}
+}
