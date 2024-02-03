@@ -25,10 +25,8 @@ export const render = (todos: ITodo[]) => {
 		}
 		if (config.debuggingIsOn()) {
 			html += `
-			<div class="debuggingArea">
-			<p>debugging info</p>
-			</div>
-			`;
+			<pre class="debuggingArea">${JSON.stringify(todos, null, 2)}</pre>
+			`.trim();
 		}
 		todosComponentElem.innerHTML = html;
 	}
