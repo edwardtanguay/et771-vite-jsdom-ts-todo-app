@@ -7,9 +7,9 @@ export const Todo = (todo: ITodo) => {
 		<p><input type="checkbox"/></p>
 		<p>${todo.text}</p>
 	</section>
-	<section>
-		<button>edit</button>
-		<button>delete</button>
+	<section class="flex gap-2">
+		<button><i class="fa fa-pencil text-green-500 hover:text-green-300" aria-hidden="true"></i></button>
+		<button><i class="fa fa-trash text-red-500 hover:text-red-300" aria-hidden="true"></i></button>
 	</section>
 </div>
 	`;
