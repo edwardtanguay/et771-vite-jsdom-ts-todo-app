@@ -8,11 +8,10 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 
 	setTimeout(() => {
 		const todoElem = document.querySelector<HTMLDivElement>(`#${htmlTodoId}`);
-		const todoLabelElem = document.querySelector<HTMLDivElement>(`#${htmlTodoId} label`);
-		if (todoElem && todoLabelElem) {
-			todoLabelElem.addEventListener('click', () => {
+		const todoCheckboxElem = document.querySelector<HTMLDivElement>(`#${htmlTodoId} input[type=checkbox]`);
+		if (todoElem && todoCheckboxElem) {
+			todoCheckboxElem.addEventListener('click', () => {
 				todo.finished = !todo.finished;
-				// todoElem.innerHTML = Todo(todo, todos);
 				Todos.render(todos);
 			});
 		}
