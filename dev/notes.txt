@@ -1,5 +1,5 @@
-- .. implement edit
-	- 
+- fix vercel reload
+
 
 - sort by rank
 - show rank
@@ -15,5 +15,5 @@
 	- improvements
 		- make the rerendering a core feature which makes it easy to add other computers that are automatically rerendered, e.g. anytime you change appData (basically a collection of state variables), you rerender all the components
 - create: add todo
-
+-
 - localstorage
