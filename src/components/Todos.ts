@@ -20,24 +20,50 @@ for (const _todo of _todos) {
 export const Todos = () => {
 	setTimeout(() => {
 		render(todos);
+
 		const btnAddFirstTodoElem = document.querySelector<HTMLButtonElement>(
 			`.btnAddFirstTodo`
 		);
 
-		const debuggingAreaElem = document.querySelector<HTMLPreElement>('.debuggingArea');
-		if (debuggingAreaElem) {
-			debuggingAreaElem.addEventListener('mouseenter', () => {
-				console.log('clicked pre');
-			});
-			debuggingAreaElem.style.backgroundColor = 'purple';
-		}
-
 		if (btnAddFirstTodoElem) {
-			console.log(btnAddFirstTodoElem);
-			btnAddFirstTodoElem.style.color = 'red';
 			btnAddFirstTodoElem.addEventListener("click", () => {
-				console.log('nnnnn');
-				alert('add it')
+				const addTodoFormElem = document.querySelector<HTMLDivElement>('.addTodoForm');
+				if (addTodoFormElem) {
+					addTodoFormElem.style.display = addTodoFormElem.style.display === 'block' ? 'none' : 'block';
+					if (addTodoFormElem.style.display === 'block') {
+						const inputAddTextElem = document.querySelector<HTMLButtonElement>(
+							`input.text`
+						);
+						const inputAddRankElem = document.querySelector<HTMLButtonElement>(
+							`input.rank`
+						);
+						const btnCancelAddElem = document.querySelector<HTMLButtonElement>(
+							`.btnCancelAdd`
+						);
+						const btnPerformAddElem = document.querySelector<HTMLButtonElement>(
+							`.btnPerformAdd`
+						);
+
+						if (inputAddTextElem && inputAddRankElem && btnCancelAddElem && btnPerformAddElem) {
+							btnCancelAddElem.addEventListener('click', () => {
+								addTodoFormElem.style.display = 'none';
+							})
+							// if (btnCancelAddElem && btnPerformAddElem) {
+							// 	btnPerformAddElem.addEventListener("click", () => {
+							// 		todos.push(
+							// 			Todos.createTodo({
+							// 				text: inputAddTextElem.value,
+							// 				rank: Number(inputAddRankElem.value),
+							// 				finished: false
+							// 			})
+							// 		);
+							// 		todo.isAdding = false;
+							// 		Todos.render(todos);
+							// 	});
+							// }
+						}
+					}
+				}
 			})
 		}
 	}, 0);
@@ -59,6 +85,25 @@ export const render = (todos: ITodo[]) => {
 		}
 		if (html.trim() === '') {
 			html = /*html*/ `<button class="btnAddFirstTodo bg-yellow-400 hover:bg-yellow-300 text-gray-900 text-xs px-2 py-1 rounded" type="button">Add Todo</button>`;
+
+			html += /*html*/ `
+	<div style="display:none" class="addTodoForm bg-yellow-500 text-gray-950 mb-2 p-3 rounded border border-gray-700 mt-4">
+		<section class="mb-4">
+			<div class="flex gap-2 mt-2">
+				<label class="w-[3rem]" for="text">Text:</label>
+				<input class="text" type="text" value="" id="text">
+			</div>
+			<div class="flex gap-2 mt-2">
+				<label class="w-[3rem]" for="rank">Rank:</label>
+				<input class="rank w-[5rem] text-right" value="3" type="number" id="rank">
+			</div>
+		</section>
+		<form class="w-full flex gap-2 justify-end">
+			<button class="formButton btnCancelAdd" type="button">Cancel</button>
+			<button class="formButton btnPerformAdd" type="button">Add</button>
+		</form>
+	</div>
+			`
 		}
 		if (config.debuggingIsOn()) {
 			html += `
