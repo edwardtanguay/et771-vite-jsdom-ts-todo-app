@@ -8,6 +8,8 @@
 	}
 }
 
+$appOrange: rgb(224, 146, 29);
+
 .debuggingArea {
 	background-color: #aaa;
 	font-size: .7rem;
@@ -18,8 +20,31 @@
 	margin-top: 1rem;
 }
 
+.pageAbout {
+	h2 {
+		color: $appOrange;
+		background-color: #293546;
+		padding: .2rem .5rem .4rem .5rem;
+		border-radius: .5rem;
+	}
+	ul {
+		list-style: disc;
+		margin-left: 2rem;
+		li {
+			margin-top: .5rem;
+			em {
+				font-style: normal;
+				color:yellow;
+			}
+		&:last-child {
+			margin-bottom: 1rem;
+		}
+		}
+	}
+}
+
 .active {
-	color: rgb(224, 146, 29);
+	color: $appOrange;
 }
 
 body {

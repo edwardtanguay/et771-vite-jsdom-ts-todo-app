@@ -1,7 +1,7 @@
 - x show rank
 - x put in 1-5 on forms
-- .. sort by rank
-- create about page (explain project)
+- x sort by rank
+- .. create about page (explain project)
 - create admin page 
 	- toggle debugging
 	- add mock todos
@@ -9,7 +9,7 @@
 	- create button: "Clear local storage"
 	
 - .. create about page
-	- best practice JS-DOM sites
+	
 	- note that our data source for todos is an array of objects, i.e. we don't misuse HTML as a data source
 	- [Version 4.7 Font Awesome icons](https://tanguay-eu.vercel.app/howtos/372) are the easiest to use for JS-DOM sites  
 	- components
