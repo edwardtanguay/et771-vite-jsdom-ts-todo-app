@@ -32,6 +32,7 @@ export const Todos = () => {
 };
 
 export const render = (todos: ITodo[]) => {
+	todos.sort((a, b) => a.rank < b.rank ? 1 : -1);
 	const todosComponentElem =
 		document.querySelector<HTMLDivElement>("#todos-component");
 	let html = "";

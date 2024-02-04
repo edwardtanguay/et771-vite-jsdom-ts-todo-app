@@ -1,7 +1,6 @@
-- .. show rank
-
-- put in 1-5 on forms
-- sort by rank
+- x show rank
+- x put in 1-5 on forms
+- .. sort by rank
 - create about page (explain project)
 - create admin page 
 	- toggle debugging
