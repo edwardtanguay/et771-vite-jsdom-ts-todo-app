@@ -27,10 +27,10 @@ export const getInitialAppState = (): IAppState => {
 export const render = (appStateChange: IAppStateChange): void => {
 	const localStorageAppState = localStorage.getItem('appState');
 	const appState: IAppState = localStorageAppState ? JSON.parse(localStorageAppState) : stateManager.getInitialAppState();
-	if (appStateChange.todos) {
+	if (appStateChange.todos !== undefined) {
 		appState.todos = appStateChange.todos;
 	}
-	if (appStateChange.showDebuggingInfo) {
+	if (appStateChange.showDebuggingInfo !== undefined) {
 		appState.showDebuggingInfo = appStateChange.showDebuggingInfo;
 	}
 	localStorage.setItem('appState', JSON.stringify(appState));
