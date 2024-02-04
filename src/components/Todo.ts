@@ -36,12 +36,20 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 		}
 
 		if (btnSaveEditElem) {
-			btnSaveEditElem.addEventListener("click", () => {
-				todo.text = 'changed';
-				todo.rank = 999;
-				todo.isEditing = !todo.isEditing;
-				Todos.render(todos);
-			});
+			const inputEditTextElem = document.querySelector<HTMLButtonElement>(
+				`#${htmlTodoId} input.text`
+			);
+			const inputEditRankElem = document.querySelector<HTMLButtonElement>(
+				`#${htmlTodoId} input.rank`
+			);
+			if (inputEditTextElem && inputEditRankElem) {
+				btnSaveEditElem.addEventListener("click", () => {
+					todo.text = inputEditTextElem.value;
+					todo.rank = Number(inputEditRankElem.value);
+					todo.isEditing = !todo.isEditing;
+					Todos.render(todos);
+				});
+			}
 		}
 
 		if (
@@ -100,11 +108,11 @@ ${!todo.isEditing
 		<form class="w-full">
 			<div class="flex gap-2 mt-2">
 				<label class="w-[3rem]" for="text">Text:</label>
-				<input type="text" value="${todo.text}" id="text">
+				<input class="text" type="text" value="${todo.text}" id="text">
 			</div>
 			<div class="flex gap-2 mt-2">
 				<label class="w-[3rem]" for="rank">Rank:</label>
-				<input class="w-[5rem] text-right" value="${todo.rank}" type="number" id="rank">
+				<input class="rank" class="w-[5rem] text-right" value="${todo.rank}" type="number" id="rank">
 			</div>
 			<div class="pt-2 flex gap-2 justify-end">
 				<button class="formButton btnCancelEdit" type="button">Cancel</button>
