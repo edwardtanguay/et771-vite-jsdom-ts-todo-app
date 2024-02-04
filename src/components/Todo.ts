@@ -155,6 +155,7 @@ ${todo.isEditing
 			<div class="flex gap-2 mt-2">
 				<label class="w-[3rem]" for="rank">Rank:</label>
 				<input class="rank w-[5rem] text-right" value="${todo.rank}" type="number" id="rank">
+				<span>(0-5 stars)</span>
 			</div>
 			<div class="pt-2 flex gap-2 justify-end">
 				<button class="formButton btnCancelEdit" type="button">Cancel</button>
@@ -188,7 +189,12 @@ ${!todo.isEditing && !todo.isDeleting
 			<p><input type="checkbox" id="${htmlCheckboxId}" ${todo.finished ? " checked" : ""
 			}/></p>
 			<label class="select-none cursor-pointer hover:text-gray-50 
-			}" for="${htmlCheckboxId}"><div><span class="relative -top-3 -left-1">${tools.displayStars(todo.rank)}</span><span class="${todo.finished ? `line-through` : ""} relative -left-5">${todo.text}</span></div></label>
+			}" for="${htmlCheckboxId}"><div>
+				
+	<div class="absolute">
+		<span class="relative -top-3">${tools.displayStars(todo.rank)}</span>
+	</div>
+			<span class="${todo.finished ? `line-through` : ""}">${todo.text}</span></div></label>
 			
 		</section>
 		<section class="flex gap-3 md:gap-2">
@@ -210,6 +216,7 @@ ${todo.isAdding
 			<div class="flex gap-2 mt-2">
 				<label class="w-[3rem]" for="rank">Rank:</label>
 				<input class="rank w-[5rem] text-right" value="3" type="number" id="rank">
+				<span>(0-5 stars)</span>
 			</div>
 		</section>
 		<form class="w-full flex gap-2 justify-end">
