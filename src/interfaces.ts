@@ -10,3 +10,13 @@ export interface ITodo extends INewTodo {
 	isDeleting: boolean;
 	isAdding: boolean;
 }
+
+export interface IAppState {
+	todos: ITodo[],
+	showDebuggingInfo: boolean
+}
+
+export interface IAppStateChange {
+	todos?: ITodo[],
+	showDebuggingInfo?: boolean
+}

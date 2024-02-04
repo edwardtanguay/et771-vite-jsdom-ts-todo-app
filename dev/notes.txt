@@ -2,12 +2,11 @@
 - x put in 1-5 on forms
 - x sort by rank
 - x create about page (explain project)
-- .. if either field is blank
-- localstorage
-- create admin page 
+- x if either field is blank
+- .. create admin page 
+	- ..replace Todos.render with SiteState.render(todos)
 	- toggle debugging
-	- add mock todos
-	- show localstorage count (e.g. 5 todos)
 	- create button: "Clear local storage"
+- .. localstorage
 - GitHub readme
 - post

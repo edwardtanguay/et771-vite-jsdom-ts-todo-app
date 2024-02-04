@@ -4,24 +4,12 @@ import { Todo } from "./Todo";
 import * as config from "../config";
 import * as tools from '../tools';
 import * as TodosFunctions from './Todos';
-
-// build todos with extra fields
-const todos: ITodo[] = [];
-for (const _todo of _todos) {
-	const __todo: any = _todo;
-	const todo: ITodo = {
-		...__todo,
-		isEditing: false,
-		isDeleting: false,
-		isAdding: false
-	}
-	todos.push(todo);
-}
+import * as StateManager from '../StateManager';
 
 export const Todos = () => {
 	setTimeout(() => {
-		render(todos);
-
+		// render(todos);
+		StateManager.render({});
 	}, 0);
 
 	return /*html*/ `
@@ -63,7 +51,7 @@ export const render = (todos: ITodo[]) => {
 	</div>
 			`
 		}
-		if (config.debuggingIsOn()) {
+		if (config.showDebuggingInfo()) {
 			html += `
 			<pre class="debuggingArea">${JSON.stringify(todos, null, 2)}</pre>
 			`.trim();
@@ -120,8 +108,6 @@ export const render = (todos: ITodo[]) => {
 				}
 			})
 		}
-
-
 	}
 };
 

@@ -1,3 +1,3 @@
-export const debuggingIsOn = () => {
+export const showDebuggingInfo = () => {
 	return false;
 }
