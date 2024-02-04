@@ -21,6 +21,16 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 		const btnAddElem = document.querySelector<HTMLButtonElement>(
 			`#${htmlTodoId} .btnAdd`
 		);
+		const btnCancelEditElem = document.querySelector<HTMLButtonElement>(
+			`#${htmlTodoId} .btnCancelEdit`
+		);
+
+		if (btnCancelEditElem) {
+			btnCancelEditElem.addEventListener("click", () => {
+				todo.isEditing = !todo.isEditing;
+				Todos.render(todos);
+			});
+		}
 
 		if (
 			todoElem &&
@@ -85,7 +95,7 @@ ${!todo.isEditing
 				<input class="w-[5rem] text-right" value="${todo.rank}" type="number" id="rank">
 			</div>
 			<div class="pt-2 flex gap-2 justify-end">
-				<button class="formButton" type="button">Cancel</button>
+				<button class="formButton btnCancelEdit" type="button">Cancel</button>
 				<button class="formButton" type="button">Save</button>
 			</div>
 		</form>
