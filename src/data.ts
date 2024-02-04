@@ -4,7 +4,7 @@ export const todos = [
 		text: "go to store",
 		rank: 4,
 		finished: false,
-		isEditing: true
+		isEditing: false
 	},
 	{
 		suuid: "HH34ja",

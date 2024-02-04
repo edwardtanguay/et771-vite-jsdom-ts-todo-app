@@ -24,9 +24,21 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 		const btnCancelEditElem = document.querySelector<HTMLButtonElement>(
 			`#${htmlTodoId} .btnCancelEdit`
 		);
+		const btnSaveEditElem = document.querySelector<HTMLButtonElement>(
+			`#${htmlTodoId} .btnSaveEdit`
+		);
 
 		if (btnCancelEditElem) {
 			btnCancelEditElem.addEventListener("click", () => {
+				todo.isEditing = !todo.isEditing;
+				Todos.render(todos);
+			});
+		}
+
+		if (btnSaveEditElem) {
+			btnSaveEditElem.addEventListener("click", () => {
+				todo.text = 'changed';
+				todo.rank = 999;
 				todo.isEditing = !todo.isEditing;
 				Todos.render(todos);
 			});
@@ -96,7 +108,7 @@ ${!todo.isEditing
 			</div>
 			<div class="pt-2 flex gap-2 justify-end">
 				<button class="formButton btnCancelEdit" type="button">Cancel</button>
-				<button class="formButton" type="button">Save</button>
+				<button class="formButton btnSaveEdit" type="button">Save</button>
 			</div>
 		</form>
 		</div>
