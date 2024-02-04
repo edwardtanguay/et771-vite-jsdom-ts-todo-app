@@ -64,7 +64,8 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 				Todos.render(todos);
 			});
 			btnDeleteElem.addEventListener("click", () => {
-				todos = todos.filter((m) => m.suuid !== todo.suuid);
+				// todos = todos.filter((m) => m.suuid !== todo.suuid);
+				todo.isDeleting = !todo.isDeleting;
 				Todos.render(todos);
 			});
 			btnEditElem.addEventListener("click", () => {
