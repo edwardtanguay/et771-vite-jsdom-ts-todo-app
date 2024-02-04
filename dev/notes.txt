@@ -1,10 +1,13 @@
 - x show rank
 - x put in 1-5 on forms
 - x sort by rank
-- .. create about page (explain project)
+- x create about page (explain project)
+- .. if either field is blank
 - localstorage
 - create admin page 
 	- toggle debugging
 	- add mock todos
 	- show localstorage count (e.g. 5 todos)
 	- create button: "Clear local storage"
+- GitHub readme
+- post

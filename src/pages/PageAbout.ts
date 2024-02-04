@@ -16,7 +16,7 @@ export const PageAbout = () => {
 		<li><em>localStorage</em> automatically saves and loads todos that are created and edited on the site</li>
 		<li>an <em>admin page</em> enables you to e.g. turn on debugging and change other config values of the site</li>
 		<li><em>Font Awesome icons</em> demonstrate an easy way to implement minimal, styled icons in a JS-DOM site</li>
-		<li><em>GitHub repository</em> contains all code for this site which you can clone, learn from, build other sites with</li>
+		<li>the <em><a class="underline" href="https://github.com/edwardtanguay/jsdomtodo" target="_blank">GitHub repository</a></em> contains all code for this site which you can clone, learn from, build other sites with</li>
 	</ul>
 </section>
 	`
