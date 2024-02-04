@@ -11,6 +11,7 @@ export const PageAbout = () => {
 		<li><em>TypeScript</em> gives you type safety, intellisense, code-completion, protection from publishing bugs, etc.</li>
 		<li>a <em>custom router</em> enables you to create component pages and easily add them to the nav bar</li>
 		<li>simple <em>state management</em> gives you the ability to change variables and then rerender the entire site, similar to React, Vue.js, Angular, etc.</li>
+		<li>full <em>CRUD features</em> which enable user to add, edit and delete todos as well as mark them as completed</li>
 		<li><em>responsive design</em> which works well both on a computer screen and smart phone</li>
 		<li><em>localStorage</em> automatically saves and loads todos that are created and edited on the site</li>
 		<li>an <em>admin page</em> enables you to e.g. turn on debugging and change other config values of the site</li>
