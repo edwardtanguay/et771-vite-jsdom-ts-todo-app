@@ -103,7 +103,7 @@ export const render = (todos: ITodo[]) => {
 									todos.push(
 										TodosFunctions.createTodo({
 											text: inputAddTextElem.value,
-											rank: Number(inputAddRankElem.value),
+											rank: tools.cleanseRank(Number(inputAddRankElem.value)),
 											finished: false
 										})
 									);

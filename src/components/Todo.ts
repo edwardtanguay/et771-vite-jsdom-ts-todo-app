@@ -132,10 +132,12 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 			btnEditElem.addEventListener("click", () => {
 				todo.isEditing = !todo.isEditing;
 				todo.isAdding = false;
+				todo.rank = tools.cleanseRank(todo.rank);
 				Todos.render(todos);
 			});
 			btnAddElem.addEventListener("click", () => {
 				todo.isAdding = !todo.isAdding;
+				todo.rank = tools.cleanseRank(todo.rank);
 				Todos.render(todos);
 			});
 		}
