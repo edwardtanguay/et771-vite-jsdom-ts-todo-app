@@ -8,7 +8,6 @@ import * as StateManager from '../StateManager';
 
 export const Todos = () => {
 	setTimeout(() => {
-		// render(todos);
 		StateManager.render({});
 	}, 0);
 

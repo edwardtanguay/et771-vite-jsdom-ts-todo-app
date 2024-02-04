@@ -4,9 +4,9 @@
 - x create about page (explain project)
 - x if either field is blank
 - .. create admin page 
-	- ..replace Todos.render with SiteState.render(todos)
+	- x replace Todos.render with SiteState.render(todos)
+	- .. implement localStorage
 	- toggle debugging
 	- create button: "Clear local storage"
-- .. localstorage
 - GitHub readme
 - post

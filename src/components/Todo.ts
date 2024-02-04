@@ -1,6 +1,7 @@
 import { ITodo } from "../interfaces";
 import * as Todos from "./Todos";
 import * as tools from '../tools';
+import * as StateManager from '../StateManager';
 
 export const Todo = (todo: ITodo, todos: ITodo[]) => {
 	const htmlTodoId = `section-${todo.suuid}`;
@@ -46,7 +47,7 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 		if (btnCancelEditElem) {
 			btnCancelEditElem.addEventListener("click", () => {
 				todo.isEditing = !todo.isEditing;
-				Todos.render(todos);
+				StateManager.render({ todos });
 			});
 		}
 
@@ -87,7 +88,7 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 					todo.text = inputEditTextElem.value;
 					todo.rank = Number(inputEditRankElem.value);
 					todo.isEditing = !todo.isEditing;
-					Todos.render(todos);
+					StateManager.render({ todos });
 				});
 			}
 		}
@@ -96,14 +97,14 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 		if (btnCancelDeleteElem) {
 			btnCancelDeleteElem.addEventListener("click", () => {
 				todo.isDeleting = !todo.isDeleting
-				Todos.render(todos);
+				StateManager.render({ todos });
 			});
 		}
 
 		if (btnPerformDeleteElem) {
 			btnPerformDeleteElem.addEventListener("click", () => {
 				todos = todos.filter((m) => m.suuid !== todo.suuid);
-				Todos.render(todos);
+				StateManager.render({ todos });
 			});
 		}
 
@@ -112,7 +113,7 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 		if (btnCancelAddElem) {
 			btnCancelAddElem.addEventListener("click", () => {
 				todo.isAdding = !todo.isAdding
-				Todos.render(todos);
+				StateManager.render({ todos });
 			});
 		}
 
@@ -133,7 +134,7 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 						})
 					);
 					todo.isAdding = false;
-					Todos.render(todos);
+					StateManager.render({ todos });
 				});
 			}
 		}
@@ -148,22 +149,22 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 		) {
 			todoCheckboxElem.addEventListener("click", () => {
 				todo.finished = !todo.finished;
-				Todos.render(todos);
+				StateManager.render({ todos });
 			});
 			btnDeleteElem.addEventListener("click", () => {
 				todo.isDeleting = !todo.isDeleting;
-				Todos.render(todos);
+				StateManager.render({ todos });
 			});
 			btnEditElem.addEventListener("click", () => {
 				todo.isEditing = !todo.isEditing;
 				todo.isAdding = false;
 				todo.rank = tools.cleanseRank(todo.rank);
-				Todos.render(todos);
+				StateManager.render({ todos });
 			});
 			btnAddElem.addEventListener("click", () => {
 				todo.isAdding = !todo.isAdding;
 				todo.rank = tools.cleanseRank(todo.rank);
-				Todos.render(todos);
+				StateManager.render({ todos });``
 			});
 		}
 	}, 0);

@@ -4,7 +4,6 @@ import { todos as _todos } from './data';
 import * as config from './config';
 import * as Todos from "./components/Todos";
 
-// build todos with extra fields
 const todos: ITodo[] = [];
 for (const _todo of _todos) {
 	const __todo: any = _todo;
@@ -33,5 +32,6 @@ export const render = (appStateChange: IAppStateChange): void => {
 	if (appStateChange.showDebuggingInfo) {
 		appState.showDebuggingInfo = appStateChange.showDebuggingInfo;
 	}
+	localStorage.setItem('appState', JSON.stringify(appState));
 	Todos.render(appState.todos);
 }
