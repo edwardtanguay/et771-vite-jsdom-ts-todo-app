@@ -8,4 +8,5 @@ export interface ITodo extends INewTodo {
 	suuid: string;
 	isEditing: boolean;
 	isDeleting: boolean;
+	isAdding: boolean;
 }

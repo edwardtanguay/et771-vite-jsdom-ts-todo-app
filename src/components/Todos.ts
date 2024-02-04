@@ -10,7 +10,8 @@ for (const _todo of _todos) {
 	const todo:ITodo = {
 		..._todo,
 		isEditing: false,
-		isDeleting: false
+		isDeleting: false,
+		isAdding: false
 	}
 	todos.push(todo);
 }
@@ -49,6 +50,7 @@ export const createTodo = (newTodo: INewTodo): ITodo => {
 		suuid: tools.getSuuid(),
 		...newTodo,
 		isEditing: false,
-		isDeleting: false
+		isDeleting: false,
+		isAdding: false
 	}
 }

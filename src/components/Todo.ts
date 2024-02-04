@@ -30,9 +30,14 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 		const btnCancelDeleteElem = document.querySelector<HTMLButtonElement>(
 			`#${htmlTodoId} .btnCancelDelete`
 		);
-
 		const btnPerformDeleteElem = document.querySelector<HTMLButtonElement>(
 			`#${htmlTodoId} .btnPerformDelete`
+		);
+		const btnCancelAddElem = document.querySelector<HTMLButtonElement>(
+			`#${htmlTodoId} .btnCancelAdd`
+		);
+		const btnPerformAddElem = document.querySelector<HTMLButtonElement>(
+			`#${htmlTodoId} .btnPerformAdd`
 		);
 
 
@@ -77,6 +82,28 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 		}
 
 
+		// ADD ITEM
+		if (btnCancelAddElem) {
+			btnCancelAddElem.addEventListener("click", () => {
+				todo.isAdding = !todo.isAdding
+				Todos.render(todos);
+			});
+		}
+
+		if (btnPerformAddElem) {
+			btnPerformAddElem.addEventListener("click", () => {
+				todos.push(
+					Todos.createTodo({
+						text: `NEW: ${Math.random()}`,
+						rank: 3,
+						finished: false
+					})
+				);
+				Todos.render(todos);
+			});
+		}
+
+
 		if (
 			todoElem &&
 			todoCheckboxElem &&
@@ -97,13 +124,7 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 				Todos.render(todos);
 			});
 			btnAddElem.addEventListener("click", () => {
-				todos.push(
-					Todos.createTodo({
-						text: `NEW: ${Math.random()}`,
-						rank: 3,
-						finished: false
-					})
-				);
+				todo.isAdding = !todo.isAdding;
 				Todos.render(todos);
 			});
 		}
@@ -122,7 +143,7 @@ ${todo.isEditing
 			</div>
 			<div class="flex gap-2 mt-2">
 				<label class="w-[3rem]" for="rank">Rank:</label>
-				<input class="rank" class="w-[5rem] text-right" value="${todo.rank}" type="number" id="rank">
+				<input class="rank w-[5rem] text-right" value="${todo.rank}" type="number" id="rank">
 			</div>
 			<div class="pt-2 flex gap-2 justify-end">
 				<button class="formButton btnCancelEdit" type="button">Cancel</button>
@@ -146,11 +167,11 @@ ${todo.isDeleting
 			</div>
 		</form>
 	</div>
-			` : ''}
+	` : ''}
 
 	
 ${!todo.isEditing && !todo.isDeleting
-		? /*html*/ `
+			? /*html*/ `
 	<div class="bg-gray-800 mb-2 p-3 rounded border border-gray-700 flex justify-between">
 		<section class="flex gap-2 align-middle">
 			<p><input type="checkbox" id="${htmlCheckboxId}" ${todo.finished ? " checked" : ""
@@ -165,6 +186,28 @@ ${!todo.isEditing && !todo.isDeleting
 		</section>
 	</div>
 	`: ''}
+
+${todo.isAdding
+			? /*html*/ `
+	<div class="bg-yellow-500 text-gray-950 mb-2 p-3 rounded border border-gray-700">
+		<section class="mb-4">
+			<div class="flex gap-2 mt-2">
+				<label class="w-[3rem]" for="text">Text:</label>
+				<input class="text" type="text" value="" id="text">
+			</div>
+			<div class="flex gap-2 mt-2">
+				<label class="w-[3rem]" for="rank">Rank:</label>
+				<input class="rank w-[5rem] text-right" value="3" type="number" id="rank">
+			</div>
+		</section>
+		<form class="w-full flex gap-2 justify-end">
+			<button class="formButton btnCancelAdd" type="button">Cancel</button>
+			<button class="formButton btnPerformAdd" type="button">Add</button>
+		</form>
+	</div>
+	` : ''}
+
+
 </div>
 	`;
 };

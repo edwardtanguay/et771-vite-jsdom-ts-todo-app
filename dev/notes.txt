@@ -1,5 +1,8 @@
 - .. implement edit
 	- 
+
+- sort by rank
+- show rank
 - .. create about page
 	- best practice JS-DOM sites
 	- note that our data source for todos is an array of objects, i.e. we don't misuse HTML as a data source
