@@ -3,6 +3,7 @@ import * as stateManager from './StateManager';
 import { todos as _todos } from './data';
 import * as config from './config';
 import * as Todos from "./components/Todos";
+import * as PageAdmin from "./pages/PageAdmin";
 
 const todos: ITodo[] = [];
 for (const _todo of _todos) {
@@ -34,4 +35,5 @@ export const render = (appStateChange: IAppStateChange): void => {
 	}
 	localStorage.setItem('appState', JSON.stringify(appState));
 	Todos.render(appState.todos);
+	PageAdmin.render(appState);
 }

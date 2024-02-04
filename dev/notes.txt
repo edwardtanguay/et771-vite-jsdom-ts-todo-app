@@ -7,6 +7,8 @@
 	- x replace Todos.render with SiteState.render(todos)
 	- x implement localStorage
 	- .. toggle debugging
-	- create button: "Clear local storage"
+	- buttons
+		- "delete all todos"
+		- "reset to mock todos"
 - GitHub readme
 - post
