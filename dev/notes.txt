@@ -1,4 +1,4 @@
-- show rank
+- .. show rank
 - sort by rank
 - create about page (explain project)
 - create admin page 

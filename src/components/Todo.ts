@@ -141,7 +141,7 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 	}, 0);
 
 	return /*html*/ `
-<div id="${htmlTodoId}">
+<div id="${htmlTodoId}" class="mb-4">
 
 ${todo.isEditing
 			? /*html*/ `
@@ -186,8 +186,9 @@ ${!todo.isEditing && !todo.isDeleting
 		<section class="flex gap-2 align-middle">
 			<p><input type="checkbox" id="${htmlCheckboxId}" ${todo.finished ? " checked" : ""
 			}/></p>
-			<label class="select-none cursor-pointer hover:text-gray-50 ${todo.finished ? `line-through` : ""
-			}" for="${htmlCheckboxId}">${todo.text}</label>
+			<label class="select-none cursor-pointer hover:text-gray-50 
+			}" for="${htmlCheckboxId}"><div><span class="relative -top-3">*****</span><span class="${todo.finished ? `line-through` : ""} relative -left-9">${todo.text}</span></div></label>
+			
 		</section>
 		<section class="flex gap-3 md:gap-2">
 			<button><i class="btnEdit fa fa-pencil text-green-500 hover:text-green-300" aria-hidden="true"></i></button>
