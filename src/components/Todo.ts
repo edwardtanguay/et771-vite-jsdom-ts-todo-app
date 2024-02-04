@@ -1,5 +1,6 @@
 import { ITodo } from "../interfaces";
 import * as Todos from "./Todos";
+import * as tools from '../tools';
 
 export const Todo = (todo: ITodo, todos: ITodo[]) => {
 	const htmlTodoId = `section-${todo.suuid}`;
@@ -187,7 +188,7 @@ ${!todo.isEditing && !todo.isDeleting
 			<p><input type="checkbox" id="${htmlCheckboxId}" ${todo.finished ? " checked" : ""
 			}/></p>
 			<label class="select-none cursor-pointer hover:text-gray-50 
-			}" for="${htmlCheckboxId}"><div><span class="relative -top-3">*****</span><span class="${todo.finished ? `line-through` : ""} relative -left-9">${todo.text}</span></div></label>
+			}" for="${htmlCheckboxId}"><div><span class="relative -top-3 -left-1">${tools.displayStars(todo.rank)}</span><span class="${todo.finished ? `line-through` : ""} relative -left-5">${todo.text}</span></div></label>
 			
 		</section>
 		<section class="flex gap-3 md:gap-2">

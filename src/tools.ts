@@ -55,3 +55,7 @@ export const setAddButtonHasEventListener = (hasEventListener: boolean) => {
 export const addButtonHasEventListener = () => {
 	return _addButtonHasEventListener;
 }
+
+export const displayStars = (numberOfStars: number):string => {
+	return '*'.repeat(numberOfStars);
+}
