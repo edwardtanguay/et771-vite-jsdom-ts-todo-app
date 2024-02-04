@@ -22,48 +22,6 @@ export const Todos = () => {
 	setTimeout(() => {
 		render(todos);
 
-		const btnAddFirstTodoElem = document.querySelector<HTMLButtonElement>(
-			`.btnAddFirstTodo`
-		);
-
-		if (btnAddFirstTodoElem) {
-			btnAddFirstTodoElem.addEventListener("click", () => {
-				const addTodoFormElem = document.querySelector<HTMLDivElement>('.addTodoForm');
-				if (addTodoFormElem) {
-					addTodoFormElem.style.display = addTodoFormElem.style.display === 'block' ? 'none' : 'block';
-					if (addTodoFormElem.style.display === 'block') {
-						const inputAddTextElem = document.querySelector<HTMLButtonElement>(
-							`input.text`
-						);
-						const inputAddRankElem = document.querySelector<HTMLButtonElement>(
-							`input.rank`
-						);
-						const btnCancelAddElem = document.querySelector<HTMLButtonElement>(
-							`.btnCancelAdd`
-						);
-						const btnPerformAddElem = document.querySelector<HTMLButtonElement>(
-							`.btnPerformAdd`
-						);
-
-						if (inputAddTextElem && inputAddRankElem && btnCancelAddElem && btnPerformAddElem) {
-							btnCancelAddElem.addEventListener('click', () => {
-								addTodoFormElem.style.display = 'none';
-							})
-							btnPerformAddElem.addEventListener("click", () => {
-								todos.push(
-									TodosFunctions.createTodo({
-										text: inputAddTextElem.value,
-										rank: Number(inputAddRankElem.value),
-										finished: false
-									})
-								);
-								TodosFunctions.render(todos);
-							});
-						}
-					}
-				}
-			})
-		}
 	}, 0);
 
 	return /*html*/ `
@@ -109,6 +67,56 @@ export const render = (todos: ITodo[]) => {
 			`.trim();
 		}
 		todosComponentElem.innerHTML = html;
+
+
+		const btnAddFirstTodoElem = document.querySelector<HTMLButtonElement>(
+			`.btnAddFirstTodo`
+		);
+
+		if (btnAddFirstTodoElem) {
+			btnAddFirstTodoElem.addEventListener("click", () => {
+				const addTodoFormElem = document.querySelector<HTMLDivElement>('.addTodoForm');
+				if (addTodoFormElem) {
+					addTodoFormElem.style.display = addTodoFormElem.style.display === 'block' ? 'none' : 'block';
+					if (addTodoFormElem.style.display === 'block') {
+						const inputAddTextElem = document.querySelector<HTMLButtonElement>(
+							`input.text`
+						);
+						const inputAddRankElem = document.querySelector<HTMLButtonElement>(
+							`input.rank`
+						);
+						const btnCancelAddElem = document.querySelector<HTMLButtonElement>(
+							`.btnCancelAdd`
+						);
+						const btnPerformAddElem = document.querySelector<HTMLButtonElement>(
+							`.btnPerformAdd`
+						);
+
+						if (inputAddTextElem && inputAddRankElem && btnCancelAddElem && btnPerformAddElem) {
+							btnCancelAddElem.addEventListener('click', () => {
+								addTodoFormElem.style.display = 'none';
+							})
+							btnPerformAddElem.addEventListener("click", () => {
+								todos.push(
+									TodosFunctions.createTodo({
+										text: inputAddTextElem.value,
+										rank: Number(inputAddRankElem.value),
+										finished: false
+									})
+								);
+								TodosFunctions.render(todos);
+							});
+						} else {
+							console.log('ERROR: something not right');
+						}
+					}
+				} else {
+					console.log('ERROR: addTodoFormElem is null');
+				}
+			})
+		}
+
+
 	}
 };
 
