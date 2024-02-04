@@ -87,23 +87,9 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 
 	return /*html*/ `
 <div id="${htmlTodoId}">
-${!todo.isEditing
+
+${todo.isEditing
 			? /*html*/ `
-	<div class="bg-gray-800 mb-2 p-3 rounded border border-gray-700 flex justify-between">
-		<section class="flex gap-2 align-middle">
-			<p><input type="checkbox" id="${htmlCheckboxId}" ${todo.finished ? " checked" : ""
-			}/></p>
-			<label class="select-none cursor-pointer hover:text-gray-50 ${todo.finished ? `line-through` : ""
-			}" for="${htmlCheckboxId}">${todo.text}</label>
-		</section>
-		<section class="flex gap-2">
-			<button><i class="btnEdit fa fa-pencil text-green-500 hover:text-green-300" aria-hidden="true"></i></button>
-			<button><i class="btnDelete fa fa-trash text-red-500 hover:text-red-300" aria-hidden="true"></i></button>
-			<button><i class="btnAdd fa fa-plus-square text-yellow-500 hover:text-yellow-300" aria-hidden="true"></i></button>
-		</section>
-	</div>
-	`
-			: /*html*/ `
 	<div class="bg-green-800 mb-2 p-3 rounded border border-gray-700 flex justify-between">
 		<form class="w-full">
 			<div class="flex gap-2 mt-2">
@@ -120,8 +106,30 @@ ${!todo.isEditing
 			</div>
 		</form>
 		</div>
-	`
-		}
+	` : ''}
+
+${todo.isDeleting
+			? /*html*/ `
+			(is deleting)
+			` : ''}
+
+	
+${!todo.isEditing && !todo.isDeleting
+		? /*html*/ `
+	<div class="bg-gray-800 mb-2 p-3 rounded border border-gray-700 flex justify-between">
+		<section class="flex gap-2 align-middle">
+			<p><input type="checkbox" id="${htmlCheckboxId}" ${todo.finished ? " checked" : ""
+			}/></p>
+			<label class="select-none cursor-pointer hover:text-gray-50 ${todo.finished ? `line-through` : ""
+			}" for="${htmlCheckboxId}">${todo.text}</label>
+		</section>
+		<section class="flex gap-2">
+			<button><i class="btnEdit fa fa-pencil text-green-500 hover:text-green-300" aria-hidden="true"></i></button>
+			<button><i class="btnDelete fa fa-trash text-red-500 hover:text-red-300" aria-hidden="true"></i></button>
+			<button><i class="btnAdd fa fa-plus-square text-yellow-500 hover:text-yellow-300" aria-hidden="true"></i></button>
+		</section>
+	</div>
+	`: ''}
 </div>
 	`;
 };
