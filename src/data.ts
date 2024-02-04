@@ -2,7 +2,7 @@ export const todos = [
 	{
 		suuid: "8Jiwlj",
 		text: "go to store",
-		rank: 1,
+		rank: 4,
 		finished: false,
 		isEditing: true
 	},

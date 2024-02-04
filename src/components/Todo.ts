@@ -78,11 +78,15 @@ ${!todo.isEditing
 		<form>
 			<div class="flex gap-2 mt-2">
 				<label class="w-[3rem]" for="text">Text:</label>
-				<input type="text" id="text">
+				<input type="text" value="${todo.text}" id="text">
 			</div>
 			<div class="flex gap-2 mt-2">
 				<label class="w-[3rem]" for="rank">Rank:</label>
-				<input class="w-[5rem] text-right" type="number" id="rank">
+				<input class="w-[5rem] text-right" value="${todo.rank}" type="number" id="rank">
+			</div>
+			<div class="pt-2">
+				<button class="formButton" type="button">Cancel</button>
+				<button class="formButton" type="button">Save</button>
 			</div>
 		</form>
 		</div>
