@@ -75,7 +75,7 @@ ${!todo.isEditing
 	`
 			: /*html*/ `
 	<div class="bg-green-800 mb-2 p-3 rounded border border-gray-700 flex justify-between">
-		<form>
+		<form class="w-full">
 			<div class="flex gap-2 mt-2">
 				<label class="w-[3rem]" for="text">Text:</label>
 				<input type="text" value="${todo.text}" id="text">
@@ -84,7 +84,7 @@ ${!todo.isEditing
 				<label class="w-[3rem]" for="rank">Rank:</label>
 				<input class="w-[5rem] text-right" value="${todo.rank}" type="number" id="rank">
 			</div>
-			<div class="pt-2">
+			<div class="pt-2 flex gap-2 justify-end">
 				<button class="formButton" type="button">Cancel</button>
 				<button class="formButton" type="button">Save</button>
 			</div>
