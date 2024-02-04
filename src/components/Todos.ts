@@ -3,6 +3,7 @@ import { INewTodo, ITodo } from "../interfaces";
 import { Todo } from "./Todo";
 import * as config from "../config";
 import * as tools from '../tools';
+import * as TodosFunctions from './Todos';
 
 // build todos with extra fields
 const todos: ITodo[] = [];
@@ -48,19 +49,16 @@ export const Todos = () => {
 							btnCancelAddElem.addEventListener('click', () => {
 								addTodoFormElem.style.display = 'none';
 							})
-							// if (btnCancelAddElem && btnPerformAddElem) {
-							// 	btnPerformAddElem.addEventListener("click", () => {
-							// 		todos.push(
-							// 			Todos.createTodo({
-							// 				text: inputAddTextElem.value,
-							// 				rank: Number(inputAddRankElem.value),
-							// 				finished: false
-							// 			})
-							// 		);
-							// 		todo.isAdding = false;
-							// 		Todos.render(todos);
-							// 	});
-							// }
+							btnPerformAddElem.addEventListener("click", () => {
+								todos.push(
+									TodosFunctions.createTodo({
+										text: inputAddTextElem.value,
+										rank: Number(inputAddRankElem.value),
+										finished: false
+									})
+								);
+								TodosFunctions.render(todos);
+							});
 						}
 					}
 				}
