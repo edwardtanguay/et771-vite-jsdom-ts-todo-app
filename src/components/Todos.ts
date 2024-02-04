@@ -7,8 +7,9 @@ import * as tools from '../tools';
 // build todos with extra fields
 const todos:ITodo[] = [];
 for (const _todo of _todos) {
+	const __todo: any = _todo;
 	const todo:ITodo = {
-		..._todo,
+		...__todo,
 		isEditing: false,
 		isDeleting: false,
 		isAdding: false
@@ -35,6 +36,9 @@ export const render = (todos: ITodo[]) => {
 	if (todosComponentElem) {
 		for (const todo of todos) {
 			html += Todo(todo, todos);
+		}
+		if (html.trim() === '') {
+			html = /*html*/ `<button class="bg-yellow-400 hover:bg-yellow-300 text-gray-900 text-xs px-2 py-1 rounded" type="button">Add Todo</button>`;
 		}
 		if (config.debuggingIsOn()) {
 			html += `
