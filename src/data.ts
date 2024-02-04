@@ -3,18 +3,21 @@ export const todos = [
 		suuid: "8Jiwlj",
 		text: "go to store",
 		rank: 1,
-		finished: false
+		finished: false,
+		isEditing: true
 	},
 	{
 		suuid: "HH34ja",
 		text: "read a book",
 		rank: 3,
-		finished: false
+		finished: false,
+		isEditing: false
 	},
 	{
 		suuid: "423Aja",
 		text: "create React site",
 		rank: 2,
-		finished: true
+		finished: true,
+		isEditing: false
 	}
 ];

@@ -1,20 +1,5 @@
-- x create javascript array of todos
-- .. display them
-	- x style them with all buttons
-		- checkbox (finished)
-		- edit
-		- delete
-	- x display if finished
-		- x mark if finished
-		- x cross out
-		- x if text click, with hover
-		- x fix bug: click twice
-	- x create: rerenderTodos
-	- x checkbox also switches display
-	- x make add button
-	- x make delete work
-	- x do mock add and edit
-	- x post
+- .. implement edit
+	- 
 - .. create about page
 	- best practice JS-DOM sites
 	- note that our data source for todos is an array of objects, i.e. we don't misuse HTML as a data source
