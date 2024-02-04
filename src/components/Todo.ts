@@ -76,8 +76,7 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 					Todos.createTodo({
 						text: `NEW: ${Math.random()}`,
 						rank: 3,
-						finished: false,
-						isEditing: false,
+						finished: false
 					})
 				);
 				Todos.render(todos);

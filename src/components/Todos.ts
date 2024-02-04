@@ -1,8 +1,19 @@
-import { todos } from "../data.js";
-import { INewTodo, ITodo } from "../interfaces.js";
-import { Todo } from "./Todo.js";
-import * as config from "../config.js";
-import * as tools from '../tools.js';
+import { todos as _todos } from "../data";
+import { INewTodo, ITodo } from "../interfaces";
+import { Todo } from "./Todo";
+import * as config from "../config";
+import * as tools from '../tools';
+
+// build todos with extra fields
+const todos:ITodo[] = [];
+for (const _todo of _todos) {
+	const todo:ITodo = {
+		..._todo,
+		isEditing: false,
+		isDeleting: false
+	}
+	todos.push(todo);
+}
 
 export const Todos = () => {
 	setTimeout(() => {
@@ -33,9 +44,11 @@ export const render = (todos: ITodo[]) => {
 	}
 };
 
-export const createTodo = (newTodo: INewTodo) => {
+export const createTodo = (newTodo: INewTodo): ITodo => {
 	return {
 		suuid: tools.getSuuid(),
-		...newTodo
+		...newTodo,
+		isEditing: false,
+		isDeleting: false
 	}
 }
