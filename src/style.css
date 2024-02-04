@@ -20,6 +20,12 @@ body {
 	animation: fadein .1s ease-in;
 }
 
+form {
+	input {
+		color: #000;
+	}
+}
+
 @keyframes fadein {
 	from {
 		opacity: 0;
