@@ -50,9 +50,9 @@ export const render = (todos: ITodo[]) => {
 				<input class="text" type="text" value="" id="text">
 			</div>
 			<div class="flex gap-2 mt-2">
-				<label class="w-[3rem]" for="rank">Rank:</label>
+				<label class="w-[3rem]" for="rank">Stars:</label>
 				<input class="rank w-[5rem] text-right" value="3" type="number" id="rank">
-				<span>(0-5 stars)</span>
+				<span>(0-5)</span>
 			</div>
 		</section>
 		<form class="w-full flex gap-2 justify-end">

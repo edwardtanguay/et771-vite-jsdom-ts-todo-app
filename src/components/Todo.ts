@@ -155,9 +155,9 @@ ${todo.isEditing
 				<input class="text" type="text" value="${todo.text}" id="text">
 			</div>
 			<div class="flex gap-2 mt-2">
-				<label class="w-[3rem]" for="rank">Rank:</label>
+				<label class="w-[3rem]" for="rank">Stars:</label>
 				<input class="rank w-[5rem] text-right" value="${todo.rank}" type="number" id="rank">
-				<span>(0-5 stars)</span>
+				<span>(0-5)</span>
 			</div>
 			<div class="pt-2 flex gap-2 justify-end">
 				<button class="formButton btnCancelEdit" type="button">Cancel</button>
@@ -194,7 +194,7 @@ ${!todo.isEditing && !todo.isDeleting
 			}" for="${htmlCheckboxId}"><div>
 				
 	<div class="absolute">
-		<span class="relative -top-3">${tools.displayStars(todo.rank)}</span>
+		<span class="relative -top-2">${tools.displayStars(todo.rank)}</span>
 	</div>
 			<span class="${todo.finished ? `line-through` : ""}">${todo.text}</span></div></label>
 			
@@ -216,9 +216,9 @@ ${todo.isAdding
 				<input class="text" type="text" value="" id="text">
 			</div>
 			<div class="flex gap-2 mt-2">
-				<label class="w-[3rem]" for="rank">Rank:</label>
+				<label class="w-[3rem]" for="rank">Stars:</label>
 				<input class="rank w-[5rem] text-right" value="3" type="number" id="rank">
-				<span>(0-5 stars)</span>
+				<span>(0-5)</span>
 			</div>
 		</section>
 		<form class="w-full flex gap-2 justify-end">

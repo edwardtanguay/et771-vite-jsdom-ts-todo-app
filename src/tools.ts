@@ -57,12 +57,17 @@ export const addButtonHasEventListener = () => {
 }
 
 export const cleanseRank = (rank: number): number => {
-	if (rank < 0) rank = 0; 
-	if (rank > 5) rank = 5; 
+	if (rank < 0) rank = 0;
+	if (rank > 5) rank = 5;
 	return rank;
 }
 
-export const displayStars = (rank: number):string => {
+export const displayStars = (rank: number): string => {
+	let html = '';
 	rank = cleanseRank(rank);
-	return '*'.repeat(rank);
+	html += '<span class="flex gap-1 text-xs">';
+	html += '<i class="text-yellow-200 fa fa-star" aria-hidden="true"></i>'.repeat(rank);
+	html += '<i class="text-gray-600 fa fa-star-o" aria-hidden="true"></i>'.repeat(5 - rank);
+	html += '</span>';
+	return html;
 }
