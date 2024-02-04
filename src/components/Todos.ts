@@ -96,16 +96,19 @@ export const render = (todos: ITodo[]) => {
 							btnCancelAddElem.addEventListener('click', () => {
 								addTodoFormElem.style.display = 'none';
 							})
-							btnPerformAddElem.addEventListener("click", () => {
-								todos.push(
-									TodosFunctions.createTodo({
-										text: inputAddTextElem.value,
-										rank: Number(inputAddRankElem.value),
-										finished: false
-									})
-								);
-								TodosFunctions.render(todos);
-							});
+							if (btnPerformAddElem.getAttribute('listener') !== 'true') {
+								btnPerformAddElem.setAttribute('listener', 'true');
+								btnPerformAddElem.addEventListener("click", () => {
+									todos.push(
+										TodosFunctions.createTodo({
+											text: inputAddTextElem.value,
+											rank: Number(inputAddRankElem.value),
+											finished: false
+										})
+									);
+									TodosFunctions.render(todos);
+								});
+							}
 						} else {
 							console.log('ERROR: something not right');
 						}

@@ -1,8 +1,12 @@
-- fix vercel reload
-
-
-- sort by rank
 - show rank
+- sort by rank
+- create about page (explain project)
+- create admin page 
+	- toggle debugging
+	- add mock todos
+	- show localstorage count (e.g. 5 todos)
+	- create button: "Clear local storage"
+	
 - .. create about page
 	- best practice JS-DOM sites
 	- note that our data source for todos is an array of objects, i.e. we don't misuse HTML as a data source

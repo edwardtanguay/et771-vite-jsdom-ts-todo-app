@@ -1,5 +1,7 @@
 import * as tools from './tools';
 
+let _addButtonHasEventListener = false;
+
 export const getSuuid = () => {
 	const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 	const length = 6;
@@ -44,4 +46,12 @@ export const getCurrentPageIdCode = () => {
 
 export const getCurrentUrl = () => {
 	return window.location.href;
+}
+
+export const setAddButtonHasEventListener = (hasEventListener: boolean) => {
+	_addButtonHasEventListener = hasEventListener;
+}
+
+export const addButtonHasEventListener = () => {
+	return _addButtonHasEventListener;
 }
