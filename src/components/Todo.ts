@@ -58,6 +58,7 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 				`#${htmlTodoId} input.rank`
 			);
 			if (inputEditTextElem && inputEditRankElem) {
+				// disabled save button if text is empty
 				inputEditTextElem.addEventListener('keyup', () => {
 					if (inputEditTextElem.value.trim() === '') {
 						btnSaveEditElem.classList.remove('formButton');
@@ -69,6 +70,19 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 						btnSaveEditElem.disabled = false;
 					}
 				});
+				// disabled save button if text is empty
+				inputEditRankElem.addEventListener('keyup', () => {
+					if (inputEditRankElem.value.trim() === '') {
+						btnSaveEditElem.classList.remove('formButton');
+						btnSaveEditElem.classList.add('formButtonDisabled');
+						btnSaveEditElem.disabled = true;
+					} else {
+						btnSaveEditElem.classList.remove('formButtonDisabled');
+						btnSaveEditElem.classList.add('formButton');
+						btnSaveEditElem.disabled = false;
+					}
+				});
+				// save button click
 				btnSaveEditElem.addEventListener("click", () => {
 					todo.text = inputEditTextElem.value;
 					todo.rank = Number(inputEditRankElem.value);
