@@ -7,29 +7,15 @@ export const PageAbout = () => {
 	</ul>
 	<h2>features</h2>
 	<ul>
-		<li>the site is built with <em>Vite JS-DOM (Vanilla)</em> which provides a modern JavaScript npm development environment</li>
+		<li>built with <em>Vite JS-DOM (Vanilla)</em> which provides a modern JavaScript development environment</li>
+		<li><em>TypeScript</em> gives you type safety, intellisense, code-completion, protection from publishing bugs, etc.</li>
+		<li>a <em>custom router</em> enables you to create component pages and easily add them to the nav bar</li>
 		<li>simple <em>state management</em> gives you the ability to change variables and then rerender the entire site, similar to React, Vue.js, Angular, etc.</li>
-		<li>the entire site is written in <em>TypeScript</em> which gives you type safety, intellisense, code-completion, protection from publishing bugs, etc.</li>
-	</ul>
-	<h2>nnn</h2>
-	<ul>
-		<li>nnn</li>
-	</ul>
-	<h2>nnn</h2>
-	<ul>
-		<li>nnn</li>
-	</ul>
-	<h2>nnn</h2>
-	<ul>
-		<li>nnn</li>
-	</ul>
-	<h2>nnn</h2>
-	<ul>
-		<li>nnn</li>
-	</ul>
-	<h2>nnn</h2>
-	<ul>
-		<li>nnn</li>
+		<li><em>responsive design</em> which works well both on a computer screen and smart phone</li>
+		<li><em>localStorage</em> automatically saves and loads todos that are created and edited on the site</li>
+		<li>an <em>admin page</em> enables you to e.g. turn on debugging and change other config values of the site</li>
+		<li><em>Font Awesome icons</em> demonstrate an easy way to implement minimal, styled icons in a JS-DOM site</li>
+		<li><em>GitHub repository</em> contains all code for this site which you can clone, learn from, build other sites with</li>
 	</ul>
 </section>
 	`
