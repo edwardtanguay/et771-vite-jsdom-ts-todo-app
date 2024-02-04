@@ -5,8 +5,8 @@
 - x if either field is blank
 - .. create admin page 
 	- x replace Todos.render with SiteState.render(todos)
-	- .. implement localStorage
-	- toggle debugging
+	- x implement localStorage
+	- .. toggle debugging
 	- create button: "Clear local storage"
 - GitHub readme
 - post
