@@ -57,9 +57,9 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 
 	return /*html*/ `
 <div id="${htmlTodoId}">
-	<div class="bg-gray-800 mb-2 p-3 rounded border border-gray-700 flex justify-between">
 ${!todo.isEditing
 			? /*html*/ `
+	<div class="bg-gray-800 mb-2 p-3 rounded border border-gray-700 flex justify-between">
 		<section class="flex gap-2 align-middle">
 			<p><input type="checkbox" id="${htmlCheckboxId}" ${todo.finished ? " checked" : ""
 			}/></p>
@@ -71,21 +71,23 @@ ${!todo.isEditing
 			<button><i class="btnDelete fa fa-trash text-red-500 hover:text-red-300" aria-hidden="true"></i></button>
 			<button><i class="btnAdd fa fa-plus-square text-yellow-500 hover:text-yellow-300" aria-hidden="true"></i></button>
 		</section>
+	</div>
 	`
 			: /*html*/ `
-<form>
-	<div class="flex gap-2 mt-2">
-		<label class="w-[3rem]" for="text">Text:</label>
-		<input type="text" id="text">
-	</div>
-	<div class="flex gap-2 mt-2">
-		<label class="w-[3rem]" for="rank">Rank:</label>
-		<input class="w-[5rem] text-right" type="number" id="rank">
-	</div>
-</form>
+	<div class="bg-green-800 mb-2 p-3 rounded border border-gray-700 flex justify-between">
+		<form>
+			<div class="flex gap-2 mt-2">
+				<label class="w-[3rem]" for="text">Text:</label>
+				<input type="text" id="text">
+			</div>
+			<div class="flex gap-2 mt-2">
+				<label class="w-[3rem]" for="rank">Rank:</label>
+				<input class="w-[5rem] text-right" type="number" id="rank">
+			</div>
+		</form>
+		</div>
 	`
 		}
-	</div>
 </div>
 	`;
 };
