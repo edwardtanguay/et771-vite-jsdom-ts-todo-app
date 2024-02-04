@@ -27,7 +27,12 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 		const btnSaveEditElem = document.querySelector<HTMLButtonElement>(
 			`#${htmlTodoId} .btnSaveEdit`
 		);
+		const btnCancelDeleteElem = document.querySelector<HTMLButtonElement>(
+			`#${htmlTodoId} .btnCancelDelete`
+		);
 
+
+		// EDIT ITEM
 		if (btnCancelEditElem) {
 			btnCancelEditElem.addEventListener("click", () => {
 				todo.isEditing = !todo.isEditing;
@@ -51,6 +56,15 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 				});
 			}
 		}
+
+		// DELETE ITEM
+		if (btnCancelDeleteElem) {
+			btnCancelDeleteElem.addEventListener("click", () => {
+				todo.isDeleting = !todo.isDeleting
+				Todos.render(todos);
+			});
+		}
+
 
 		if (
 			todoElem &&
@@ -105,12 +119,23 @@ ${todo.isEditing
 				<button class="formButton btnSaveEdit" type="button">Save</button>
 			</div>
 		</form>
-		</div>
+	</div>
 	` : ''}
 
 ${todo.isDeleting
 			? /*html*/ `
-			(is deleting)
+	<div class="bg-red-800 mb-2 p-3 rounded border border-gray-700">
+		<section class="mb-4">
+		${todo.text}
+		</section>
+		<form class="w-full flex gap-2 justify-between">
+			<p>Are you sure?</p>
+			<div class="pt-2 flex gap-2 justify-end">
+				<button class="formButton btnCancelDelete" type="button">Cancel</button>
+				<button class="formButton btnPerformDelete" type="button">Delete</button>
+			</div>
+		</form>
+	</div>
 			` : ''}
 
 	
