@@ -91,16 +91,25 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 		}
 
 		if (btnPerformAddElem) {
-			btnPerformAddElem.addEventListener("click", () => {
-				todos.push(
-					Todos.createTodo({
-						text: `NEW: ${Math.random()}`,
-						rank: 3,
-						finished: false
-					})
-				);
-				Todos.render(todos);
-			});
+			const inputAddTextElem = document.querySelector<HTMLButtonElement>(
+				`#${htmlTodoId} input.text`
+			);
+			const inputAddRankElem = document.querySelector<HTMLButtonElement>(
+				`#${htmlTodoId} input.rank`
+			);
+			if (inputAddTextElem && inputAddRankElem) {
+				btnPerformAddElem.addEventListener("click", () => {
+					todos.push(
+						Todos.createTodo({
+							text: inputAddTextElem.value,
+							rank: Number(inputAddRankElem.value),
+							finished: false
+						})
+					);
+					todo.isAdding = false;
+					Todos.render(todos);
+				});
+			}
 		}
 
 
@@ -121,6 +130,7 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 			});
 			btnEditElem.addEventListener("click", () => {
 				todo.isEditing = !todo.isEditing;
+				todo.isAdding = false;
 				Todos.render(todos);
 			});
 			btnAddElem.addEventListener("click", () => {
