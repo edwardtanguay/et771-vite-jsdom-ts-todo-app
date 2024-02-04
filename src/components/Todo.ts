@@ -186,7 +186,7 @@ ${todo.isDeleting
 	
 ${!todo.isEditing && !todo.isDeleting
 			? /*html*/ `
-	<div class="bg-gray-800 mb-2 p-3 rounded border border-gray-700 flex justify-between">
+	<div class="bg-gray-800 mb-2 pt-5 pr-3 pb-3 pl-3 rounded border border-gray-700 flex justify-between">
 		<section class="flex gap-2 align-middle">
 			<p><input type="checkbox" id="${htmlCheckboxId}" ${todo.finished ? " checked" : ""
 			}/></p>
