@@ -2,8 +2,9 @@ import * as tools from './tools';
 import { PageMain } from './pages/PageMain';
 import { Page404 } from './pages/Page404';
 import { PageAbout } from './pages/PageAbout';
+import { PageAdmin } from './pages/PageAdmin';
 
-const pageNames = ['Main', 'About'];
+const pageNames = ['Main', 'About', 'Admin'];
 
 const currentPageIdCode = getSmartCurrentPageId();
 
@@ -13,6 +14,8 @@ export const getCurrentPage = () => {
 			return PageMain();
 		case 'about':
 			return PageAbout();
+		case 'admin':
+			return PageAdmin();
 		default:
 			return Page404();
 	}

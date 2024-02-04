@@ -1,5 +1,5 @@
 export const Page404 = () => {
 	return /*html*/ `
-		<p>404 page</p>
+		<p class="text-[5rem] text-slate-800">404</p>
 	`
 }
