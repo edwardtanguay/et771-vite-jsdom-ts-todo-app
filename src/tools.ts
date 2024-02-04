@@ -1,3 +1,4 @@
+import { ITodo } from './interfaces';
 import * as tools from './tools';
 
 let _addButtonHasEventListener = false;

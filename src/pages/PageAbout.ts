@@ -18,6 +18,10 @@ export const PageAbout = () => {
 		<li><em>Font Awesome icons</em> demonstrate an easy way to implement minimal, styled icons in a JS-DOM site</li>
 		<li>the <em><a class="underline" href="https://github.com/edwardtanguay/jsdomtodo" target="_blank">GitHub repository</a></em> contains all code for this site which you can clone, learn from, build other sites with</li>
 	</ul>
+	<h2>known issues</h2>
+	<ul>
+		<li>if you want to implement a <em>React-like onChange</em> for an input element, you will have to deal with the fact that <em>rerendering the site</em>, e.g. to display a message that the user has exceeded a maximum, etc., <em>takes the focus out of the input box</em>, which you have to refocus, which e.g. may not be in the same position as the cursor was when the user manipulated the text, which causes an <em>unsatisfactory user experience</em></li>
+	</ul>
 </section>
 	`
 }

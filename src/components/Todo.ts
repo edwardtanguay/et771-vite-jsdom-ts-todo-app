@@ -58,6 +58,17 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 				`#${htmlTodoId} input.rank`
 			);
 			if (inputEditTextElem && inputEditRankElem) {
+				inputEditTextElem.addEventListener('keyup', () => {
+					if (inputEditTextElem.value.trim() === '') {
+						btnSaveEditElem.classList.remove('formButton');
+						btnSaveEditElem.classList.add('formButtonDisabled');
+						btnSaveEditElem.disabled = true;
+					} else {
+						btnSaveEditElem.classList.remove('formButtonDisabled');
+						btnSaveEditElem.classList.add('formButton');
+						btnSaveEditElem.disabled = false;
+					}
+				});
 				btnSaveEditElem.addEventListener("click", () => {
 					todo.text = inputEditTextElem.value;
 					todo.rank = Number(inputEditRankElem.value);

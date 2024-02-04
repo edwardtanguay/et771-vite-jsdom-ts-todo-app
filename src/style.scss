@@ -6,6 +6,9 @@
 	button.formButton {
 		@apply bg-gray-400 hover:bg-gray-300 text-gray-900 text-xs px-2 py-1 rounded;
 	}
+	button.formButtonDisabled {
+		@apply bg-gray-400 text-gray-900 text-xs px-2 py-1 rounded opacity-50;
+	}
 }
 
 $appOrange: rgb(224, 146, 29);
