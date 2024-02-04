@@ -31,6 +31,10 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 			`#${htmlTodoId} .btnCancelDelete`
 		);
 
+		const btnPerformDeleteElem = document.querySelector<HTMLButtonElement>(
+			`#${htmlTodoId} .btnPerformDelete`
+		);
+
 
 		// EDIT ITEM
 		if (btnCancelEditElem) {
@@ -65,6 +69,13 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 			});
 		}
 
+		if (btnPerformDeleteElem) {
+			btnPerformDeleteElem.addEventListener("click", () => {
+				todos = todos.filter((m) => m.suuid !== todo.suuid);
+				Todos.render(todos);
+			});
+		}
+
 
 		if (
 			todoElem &&
@@ -78,7 +89,6 @@ export const Todo = (todo: ITodo, todos: ITodo[]) => {
 				Todos.render(todos);
 			});
 			btnDeleteElem.addEventListener("click", () => {
-				// todos = todos.filter((m) => m.suuid !== todo.suuid);
 				todo.isDeleting = !todo.isDeleting;
 				Todos.render(todos);
 			});
