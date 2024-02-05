@@ -1,25 +1,13 @@
-import { IAppState, IAppStateChange, ITodo } from "./interfaces";
+import { IAppState, IAppStateChange } from "./interfaces";
 import * as stateManager from './StateManager';
-import { todos as _todos } from './data';
 import * as config from './config';
 import * as Todos from "./components/Todos";
 import * as PageAdmin from "./pages/PageAdmin";
-
-const todos: ITodo[] = [];
-for (const _todo of _todos) {
-	const __todo: any = _todo;
-	const todo: ITodo = {
-		...__todo,
-		isEditing: false,
-		isDeleting: false,
-		isAdding: false
-	}
-	todos.push(todo);
-}
+import * as tools from './tools';
 
 export const getInitialAppState = (): IAppState => {
 	return {
-		todos,
+		todos:tools.getMockTodos(), 
 		showDebuggingInfo: config.showDebuggingInfo()
 	}
 }

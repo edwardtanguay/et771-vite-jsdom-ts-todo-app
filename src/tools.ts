@@ -1,5 +1,6 @@
 import { IAppState, ITodo } from './interfaces';
 import * as tools from './tools';
+import { todos as _todos } from './data';
 
 let _addButtonHasEventListener = false;
 
@@ -80,4 +81,19 @@ export const displayDebuggingInfo = (appState: IAppState): string => {
 <pre>${JSON.stringify(appState.todos, null, 2)}</pre>
 </section>
 			`.trim()
+}
+
+export const getMockTodos = (): ITodo[] => {
+const todos: ITodo[] = [];
+for (const _todo of _todos) {
+	const __todo: any = _todo;
+	const todo: ITodo = {
+		...__todo,
+		isEditing: false,
+		isDeleting: false,
+		isAdding: false
+	}
+	todos.push(todo);
+}
+	return todos;
 }
