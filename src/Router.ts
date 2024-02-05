@@ -4,7 +4,7 @@ import { Page404 } from './pages/Page404';
 import { PageAbout } from './pages/PageAbout';
 import { PageAdmin } from './pages/PageAdmin';
 
-const pageNames = ['Main', 'About', 'Admin'];
+const pageNames = ['Main', 'Admin', 'About'];
 
 const currentPageIdCode = getSmartCurrentPageId();
 
