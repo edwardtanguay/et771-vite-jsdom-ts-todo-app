@@ -1,7 +1,6 @@
 import * as StateManager from '../StateManager';
 import { IAppState } from '../interfaces';
 import * as tools from '../tools';
-import { todos as mockTodos } from '../data';
 
 export const PageAdmin = () => {
 

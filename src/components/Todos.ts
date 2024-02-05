@@ -1,7 +1,6 @@
 import { todos as _todos } from "../data";
 import { IAppState, INewTodo, ITodo } from "../interfaces";
 import { Todo } from "./Todo";
-import * as config from "../config";
 import * as tools from '../tools';
 import * as TodosFunctions from './Todos';
 import * as StateManager from '../StateManager';
