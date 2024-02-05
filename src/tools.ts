@@ -1,4 +1,4 @@
-import { ITodo } from './interfaces';
+import { IAppState, ITodo } from './interfaces';
 import * as tools from './tools';
 
 let _addButtonHasEventListener = false;
@@ -71,4 +71,13 @@ export const displayStars = (rank: number): string => {
 	html += '<i class="text-gray-600 fa fa-star-o" aria-hidden="true"></i>'.repeat(5 - rank);
 	html += '</span>';
 	return html;
+}
+
+export const displayDebuggingInfo = (appState: IAppState): string => {
+	return `
+<section class="debuggingArea"> 
+<h2>DEBUGGING INFO</h2>
+<pre>${JSON.stringify(appState.todos, null, 2)}</pre>
+</section>
+			`.trim()
 }

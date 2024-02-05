@@ -34,6 +34,6 @@ export const render = (appStateChange: IAppStateChange): void => {
 		appState.showDebuggingInfo = appStateChange.showDebuggingInfo;
 	}
 	localStorage.setItem('appState', JSON.stringify(appState));
-	Todos.render(appState.todos);
+	Todos.render(appState);
 	PageAdmin.render(appState);
 }

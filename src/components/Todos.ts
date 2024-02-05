@@ -1,5 +1,5 @@
 import { todos as _todos } from "../data";
-import { INewTodo, ITodo } from "../interfaces";
+import { IAppState, INewTodo, ITodo } from "../interfaces";
 import { Todo } from "./Todo";
 import * as config from "../config";
 import * as tools from '../tools';
@@ -18,7 +18,8 @@ export const Todos = () => {
 `;
 };
 
-export const render = (todos: ITodo[]) => {
+export const render = (appState: IAppState) => {
+	const { todos } = appState;
 	todos.sort((a, b) => a.rank < b.rank ? 1 : -1);
 	const todosComponentElem =
 		document.querySelector<HTMLDivElement>("#todos-component");
@@ -50,10 +51,8 @@ export const render = (todos: ITodo[]) => {
 	</div>
 			`
 		}
-		if (config.showDebuggingInfo()) {
-			html += `
-			<pre class="debuggingArea">${JSON.stringify(todos, null, 2)}</pre>
-			`.trim();
+		if (appState.showDebuggingInfo) {
+			html += tools.displayDebuggingInfo(appState);
 		}
 		todosComponentElem.innerHTML = html;
 
@@ -95,7 +94,7 @@ export const render = (todos: ITodo[]) => {
 											finished: false
 										})
 									);
-									TodosFunctions.render(todos);
+									TodosFunctions.render(appState);
 								});
 							}
 						} else {
